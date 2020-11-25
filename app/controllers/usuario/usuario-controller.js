@@ -1,6 +1,10 @@
 const Usuario = require('../../models/agenda/usuario-model');
 const { formatarResposta } = require('../../utils/response-util');
 
+exports.ping = (req, res) => {
+    res.send({ message: 'pong' });
+}
+
 exports.novoUsuario = async (req, res) => {
     const { nomeUsuario, dadosUsuario } = req.body;
     if(!nomeUsuario || !dadosUsuario || !dadosUsuario.emailUsuario || !dadosUsuario.senhaUsuario) {
